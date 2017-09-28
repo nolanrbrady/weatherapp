@@ -1,0 +1,74 @@
+<head>
+    <title>The Window</title>
+    <link rel="stylesheet" href="./weather.css" />
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Roboto:400i" rel="stylesheet">
+</head>
+<body>
+    <div>
+        
+        <!--Begin the background video-->
+        <div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="./rain-on-me/Mp4/Rain-On-Me.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="./rain-on-me/WEBM/Rain-On-Me.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="PATH_TO_JPEG" alt="">
+        </div>
+    </div>
+</div>
+        
+        <!--End the Background Video-->
+        
+        <h1 id="id">The Window</h1>
+        <!--Start the dashboard Section here-->
+        <div class="dashboard">
+            <div class="top-parent one">
+                <div class="top-child">
+                    <h3>Current Temperature</h3>
+                    <br />
+                    <p id="currentTemp">Current Temperature</p>
+                </div>
+                <div class="top-child two">
+                    <h3>High</h3>
+                    <br />
+                    <p id="highTemp"></p>
+                </div>
+                <div class="top-child one low">
+                    <h3>Low</h3>
+                    <br />
+                    <p id="lowTemp">Low</p>
+                </div>
+            </div>
+             <div class="bottom-parent">
+                <div class="bottom-child two">
+                    <h3>Sunrise</h3>
+                    <br />
+                    <p id="sunrise">Sunrise</p>
+                </div>
+                <div class="bottom-child one">
+                    <h3>Sunset</h3>
+                    <br />
+                    <p id="sunset"></p>
+                </div>
+                <div class="bottom-child two">
+                    <h3>Wind</h3>
+                    <br />
+                    <p id="wind"></p>
+                </div>
+            </div>
+        </div>
+        <!--Ending the dashboard section here-->
+        <p id="alert">Things should be here...</p>
+        <p id="btn" onClick="getLocation();">Click to Start</p>
+        <p id="errorMessage"></p>
+        <p id="url"></p>
+    </div>
+    <script type="text/javascript" src="./weather.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+</body>
