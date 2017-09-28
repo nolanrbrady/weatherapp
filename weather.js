@@ -22,16 +22,10 @@
         x.innerHTML = "Longitude: " + longitude + "<br>Latitude: " + latitude + "<br>City: " + town + ", " + state;
         var lat = data.lat;
         var long = data.lon;
-        return lat,long;
-    }).catch(function(error){
-        document.getElementById('errorMessage').innerHTML = "There was an error: " + error;
-    }); 
-    
-    //document.getElementById('btn').innerHTML = lat; //Testing the global var
-//Initiating the weather api
-
-     //var url = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lat + '&lon=' + long;  
-    var url = 'https://fcc-weather-api.glitch.me/api/current?lat=40.015&lon=-105.2706';
+        
+//========================= Imbedding functions ===========
+        
+    var url = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lat + '&lon=' + long;  
     var currentTemp;
     var highTemp;
     var lowTemp;
@@ -44,7 +38,8 @@
         return request.json();
     })
     .then(function(data){
-        description = data.weather[0].description;
+        description = data.weather[0].main;
+        var descriptionOther = data.weather[1].main;
         currentTemp = data.main.temp;
         highTemp = data.main.temp_max;
         lowTemp = data.main.temp_min;
@@ -75,11 +70,22 @@
          document.getElementById('sunset').innerHTML = sunset;
          document.getElementById('sunrise').innerHTML = sunrise;
          document.getElementById('wind').innerHTML = kmToMph(windSpeed) + " MPH";
+         document.getElementById('description').innerHTML = '-- ' + description + ', ' + descriptionOther + ' --';
     }).catch(function(error){
         alert("There was an error processing your request");
     });
 
     document.getElementById('url').innerHTML = url; 
+        
+        return data;
+    }).catch(function(error){
+        document.getElementById('errorMessage').innerHTML = "There was an error: " + error;
+    }); 
+    
+    //document.getElementById('btn').innerHTML = lat; //Testing the global var
+//Initiating the weather api
+
+     
 
 
 
