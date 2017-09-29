@@ -39,7 +39,6 @@
     })
     .then(function(data){
         description = data.weather[0].main;
-        var descriptionOther = data.weather[1].main;
         currentTemp = data.main.temp;
         highTemp = data.main.temp_max;
         lowTemp = data.main.temp_min;
@@ -70,14 +69,15 @@
          document.getElementById('sunset').innerHTML = sunset;
          document.getElementById('sunrise').innerHTML = sunrise;
          document.getElementById('wind').innerHTML = kmToMph(windSpeed) + " MPH";
-         document.getElementById('description').innerHTML = '-- ' + description + ', ' + descriptionOther + ' --';
+         document.getElementById('description').innerHTML = '-- ' + description + ' --';
     }).catch(function(error){
-        alert("There was an error processing your request");
+        alert("There was an error processing your request -> " + error);
     });
 
-    document.getElementById('url').innerHTML = url; 
+    document.getElementById('url').innerHTML = "url"; 
         
         return data;
+        <!--End of the nested API call-->
     }).catch(function(error){
         document.getElementById('errorMessage').innerHTML = "There was an error: " + error;
     }); 
@@ -85,7 +85,6 @@
     //document.getElementById('btn').innerHTML = lat; //Testing the global var
 //Initiating the weather api
 
-     
 
 
 
